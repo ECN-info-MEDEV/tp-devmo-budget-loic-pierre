@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DEVMOney</string>
+    <string name="my_budget">My Budget</string>
+    <string name="expenses">Expenses</string>
+    <string name="operations_list">Operations List</string>
+    <string name="timespan">Timespan</string>
+    <string name="total_balance_text">Total Balance Text</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="total">Total</string>
+    <string name="revenue_value">Revenue Value</string>
+    <string name="expenses_value">Expenses Value</string>
+    <string name="balance_value">Balance Value</string>
 </resources>
