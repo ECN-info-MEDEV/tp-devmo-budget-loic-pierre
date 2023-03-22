@@ -1,16 +1,12 @@
 <resources>
     <string name="app_name">DEVMOney</string>
-    <string name="my_budget">My Budget</string>
-    <string name="expenses">Expenses</string>
-    <string name="operations_list">Operations List</string>
-    <string name="timespan">Timespan</string>
-    <string name="total_balance_text">Total Balance Text</string>
+    <string name="activity_main_title">My Budget</string>
+    <string name="activity_main_expenses_title">Expenses of the month</string>
+    <string name="activity_main_operation_button">Operations List</string>
+    <string name="activity_main_total_balance_title">Total Balance</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="total">Total</string>
-    <string name="revenue_value">Revenue Value</string>
-    <string name="expenses_value">Expenses Value</string>
-    <string name="balance_value">Balance Value</string>
+    <string name="activity_main_total_balance_total">Total</string>
 
     <string name="activity_operations_title">Operations</string>
     <string name="activity_operations_add_button_cd">Add operation button</string>
