@@ -14,4 +14,13 @@ public interface OperationDao {
     @Query("SELECT * FROM Operation")
     LiveData<List<Operation>> getOperationsList();
 
+    @Query("SELECT SUM(amount) FROM Operation WHERE amount < 0")
+    LiveData<Float> getExpensesTotal();
+
+    @Query("SELECT SUM(amount) FROM Operation WHERE amount > 0")
+    LiveData<Float> getIncomesTotal();
+
+    @Query("SELECT SUM(amount) FROM Operation")
+    LiveData<Float> getOperationsTotal();
+
 }

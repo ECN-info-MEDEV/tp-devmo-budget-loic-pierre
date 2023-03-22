@@ -15,10 +15,20 @@ public class OperationDataRepository {
         this.operationDao = operationDao;
     }
 
-    // --- GET ---
-
     public LiveData<List<Operation>> getOperationsList() {
         return this.operationDao.getOperationsList();
+    }
+
+    public LiveData<Float> getExpensesTotal() {
+        return operationDao.getExpensesTotal();
+    }
+
+    public LiveData<Float> getIncomesTotal() {
+        return operationDao.getIncomesTotal();
+    }
+
+    public LiveData<Float> getOperationsTotal() {
+        return operationDao.getOperationsTotal();
     }
 
 }

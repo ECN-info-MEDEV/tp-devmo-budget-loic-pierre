@@ -1,15 +1,11 @@
 package com.patigny_baudet.devmoney.controllers;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,7 +44,7 @@ public class OperationsActivity extends AppCompatActivity {
         // Initialize UI variables
         this.recyclerView = findViewById(R.id.activity_operations_recycler_view);
         this.addButton = findViewById(R.id.activity_operations_add_button);
-        this.returnButton = findViewById(R.id.activity_operations_return_button);
+        this.returnButton = findViewById(R.id.operation_card_delete);
 
         // Setup data
         this.setupRecyclerView();
@@ -118,6 +114,6 @@ public class OperationsActivity extends AppCompatActivity {
     }
 
     private void updateOperationsList(List<Operation> operationsList) {
-        this.operationAdapter.updateJapCharacterData(operationsList);
+        this.operationAdapter.updateOperationsData(operationsList);
     }
 }
