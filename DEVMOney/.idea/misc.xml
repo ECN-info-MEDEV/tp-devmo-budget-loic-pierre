@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/category_dot.xml" value="0.1435" />
+        <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/ic_delete_24dp.xml" value="0.1435" />
+        <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/ic_left.xml" value="0.157" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/ic_savings_fill0_wght400_grad0_opsz48.xml" value="0.144" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/launch_screen.xml" value="0.144" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/logo.xml" value="0.144" />
+        <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/drawable/ripple_circle_transparent.xml" value="0.157" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/layout/activity_add_operation.xml" value="0.253125" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pierr/Documents/Travail/EI3/DEVMO/tp-devmo-budget-loic-pierre/DEVMOney/app/src/main/res/layout/activity_operations.xml" value="0.25416666666666665" />

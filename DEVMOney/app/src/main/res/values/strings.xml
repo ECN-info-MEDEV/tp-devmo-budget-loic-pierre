@@ -12,6 +12,19 @@
     <string name="expenses_value">Expenses Value</string>
     <string name="balance_value">Balance Value</string>
 
-    <string name="activity_operation_title">Operations</string>
-    <string name="activity_operation_add_button_cd">Add operation button</string>
+    <string name="activity_operations_title">Operations</string>
+    <string name="activity_operations_add_button_cd">Add operation button</string>
+    <string name="return_button_cd">Return button</string>
+
+    <string name="activity_add_operation_title">Add a new operation</string>
+    <string name="activity_add_operation_explanation">Please enter the operation details:</string>
+    <string name="activity_add_operation_name">Name:</string>
+    <string name="activity_add_operation_name_hint">Name of the operation</string>
+    <string name="activity_add_operation_date">Date:</string>
+    <string name="activity_add_operation_date_hint">Date of the operation</string>
+    <string name="activity_add_operation_amount">Amount:</string>
+    <string name="activity_add_operation_amount_hint">Amount of money</string>
+    <string name="activity_add_operation_description">Description:</string>
+    <string name="activity_add_operation_description_hint">Description of the operation</string>
+    <string name="activity_add_operation_category">Category:</string>
 </resources>

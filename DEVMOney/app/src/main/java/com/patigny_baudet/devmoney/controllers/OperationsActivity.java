@@ -3,7 +3,9 @@ package com.patigny_baudet.devmoney.controllers;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -31,6 +33,7 @@ public class OperationsActivity extends AppCompatActivity {
     // UI COMPONENTS
     private RecyclerView recyclerView;
     private FloatingActionButton addButton;
+    private ImageButton returnButton;
 
 
     // -----------------
@@ -43,8 +46,9 @@ public class OperationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_operations);
 
         // Initialize UI variables
-        this.recyclerView = findViewById(R.id.activity_operation_recycler_view);
-        this.addButton = findViewById(R.id.activity_operation_add_button);
+        this.recyclerView = findViewById(R.id.activity_operations_recycler_view);
+        this.addButton = findViewById(R.id.activity_operations_add_button);
+        this.returnButton = findViewById(R.id.activity_operations_return_button);
 
         // Setup data
         this.setupRecyclerView();
@@ -52,7 +56,8 @@ public class OperationsActivity extends AppCompatActivity {
         this.dataLoaded = false;
 
         // Setup buttons
-        addButton.setOnClickListener(v -> this.startActivity(new Intent(this, AddOperationActivity.class)));
+        addButton.setOnClickListener(v -> this.addOperation());
+        returnButton.setOnClickListener(v -> finishActivity());
     }
 
     @Override
@@ -67,8 +72,23 @@ public class OperationsActivity extends AppCompatActivity {
     // ACTION
     //----------------------------
 
-    private void addOperation() {
+    // Add operation
 
+    private void addOperation() {
+        this.startActivity(new Intent(this, AddOperationActivity.class));
+    }
+
+
+    // Finish
+
+    @Override
+    public void onBackPressed() {
+        this.finishActivity();
+    }
+
+    public void finishActivity() {
+        finish();
+        overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
     }
 
 

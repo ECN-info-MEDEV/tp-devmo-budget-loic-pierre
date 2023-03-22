@@ -44,7 +44,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationViewHolder>{
         return operationsList.size();
     }
 
-    public void updateJapCharacterData(List<Operation> japCharacterList) {
+    public void updateJapCharacterData(List<Operation> operationsList) {
         this.operationsList = operationsList;
         notifyDataSetChanged();
     }

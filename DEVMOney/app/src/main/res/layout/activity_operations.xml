@@ -6,44 +6,76 @@
     android:layout_height="match_parent"
     android:background="?attr/colorBackground">
 
-    <TextView
-        android:id="@+id/activity_operation_toolbar"
+    <View
+        android:id="@+id/activity_operations_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
         android:background="?attr/colorSurface"
-        android:elevation="@dimen/elevation1"
-        android:fitsSystemWindows="true"
-        android:gravity="center"
-        android:paddingTop="@dimen/toolbar_padding"
-        android:text="@string/activity_operation_title"
-        android:textAppearance="@style/TextAppearance.ToolbarHeadline"
-        android:textColor="?attr/colorOnSurface"
-        app:layout_constraintBottom_toTopOf="@id/activity_operation_recycler_view"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/activity_operations_recycler_view"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0"
+        android:fitsSystemWindows="true"/>
+
+    <ImageButton
+        android:id="@+id/activity_operations_return_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/return_button_cd"
+        android:src="@drawable/ic_left"
+        android:background="@drawable/ripple_circle_transparent"
+        android:padding="@dimen/padding2"
+        android:layout_marginStart="@dimen/margin2"
+        android:layout_marginBottom="@dimen/margin1"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activity_operations_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/activity_operations_toolbar"/>
+
+    <TextView
+        android:id="@+id/activity_operations_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Headline1"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="@dimen/margin3"
+        android:text="@string/activity_operations_title"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activity_operations_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/activity_operations_toolbar"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/activity_operation_recycler_view"
+        android:id="@+id/activity_operations_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_operation_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/activity_operations_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/activity_operation_add_button"
+        android:id="@+id/activity_operations_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="@dimen/elevation1"
         android:focusable="true"
         android:backgroundTint="?attr/colorPrimary"
         android:src="@drawable/ic_add_24dp"
+        android:layout_marginEnd="@dimen/margin6"
+        android:layout_marginBottom="@dimen/margin6"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_operation_toolbar"
-        android:contentDescription="@string/activity_operation_add_button_cd" />
+        app:layout_constraintTop_toBottomOf="@id/activity_operations_toolbar"
+        android:contentDescription="@string/activity_operations_add_button_cd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

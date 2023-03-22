@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin1"
+    android:padding="@dimen/padding1"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardElevation="@dimen/elevation1"
+    app:cardCornerRadius="@dimen/rounding1">
 
-    <TextView
-        android:id="@+id/operation_card_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TEST"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/operation_card_category"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/category_dot"
+            android:backgroundTint="?attr/colorPrimary"
+            android:layout_weight="0"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin2"/>
+
+        <TextView
+            android:id="@+id/operation_card_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.Body1"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginStart="@dimen/margin1"/>
+
+        <TextView
+            android:id="@+id/operation_card_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.Body1"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <ImageButton
+            android:id="@+id/activity_operations_return_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/return_button_cd"
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/ripple_circle_transparent"
+            android:padding="@dimen/padding2"
+            android:layout_marginStart="@dimen/margin2"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
