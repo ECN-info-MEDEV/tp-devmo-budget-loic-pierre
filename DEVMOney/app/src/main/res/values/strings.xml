@@ -11,4 +11,7 @@
     <string name="revenue_value">Revenue Value</string>
     <string name="expenses_value">Expenses Value</string>
     <string name="balance_value">Balance Value</string>
+
+    <string name="activity_operation_title">Operations</string>
+    <string name="activity_operation_add_button_cd">Add operation button</string>
 </resources>

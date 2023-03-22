@@ -3,6 +3,11 @@
     <dimen name="toolbar_height">76dp</dimen>
 
 
+    <!-- PADDING -->
+
+    <dimen name="toolbar_padding">18dp</dimen>
+
+
     <!-- ELEVATION -->
 
     <dimen name="elevation1">4dp</dimen>
