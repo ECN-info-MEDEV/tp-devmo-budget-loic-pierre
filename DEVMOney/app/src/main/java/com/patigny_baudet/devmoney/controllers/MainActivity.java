@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +18,9 @@ import com.patigny_baudet.devmoney.views.injection.Injection;
 import com.patigny_baudet.devmoney.views.injection.ViewModelFactory;
 import com.patigny_baudet.devmoney.views.viewModels.MainViewModel;
 
+import java.util.Dictionary;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,11 +98,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateCategoriesList(List<Category> categoriesList) {
-        this.categoryAdapter.updateCategoriesData(categoriesList);
+        this.mainViewModel.getExpensesTotalPerCategory().observe(this, d -> updateExpensesInCategoriesList(categoriesList, d));
+    }
+
+    private void updateExpensesInCategoriesList(List<Category> categoriesList, Map<Long, Float> totalExpensesPerCategory) {
+        for (Category category : categoriesList) {
+            if (totalExpensesPerCategory.get(category.getId()) > 0) {
+                categoriesList.remove(category);
+            }
+        }
+        this.categoryAdapter.updateCategoriesData(categoriesList, totalExpensesPerCategory);
     }
 
     private void updateExpensesTotal(Float total) {
-        this.totalExpensesTextView.setText(String.format("%.2f €", total));
+        this.totalExpensesTextView.setText(String.format("%.2f €", -total));
     }
 
     private void updateIncomesTotal(Float total) {

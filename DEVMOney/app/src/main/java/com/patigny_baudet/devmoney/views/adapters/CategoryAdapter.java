@@ -15,16 +15,21 @@ import com.patigny_baudet.devmoney.views.viewHolders.CategoryViewHolder;
 import com.patigny_baudet.devmoney.views.viewHolders.OperationViewHolder;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
 
     // FOR DATA
     private List<Category> categoriesList;
+    private Map<Long, Float> expensesPerCategory;
 
     // CONSTRUCTOR
     public CategoryAdapter() {
         this.categoriesList = new ArrayList<>();
+        this.expensesPerCategory = new HashMap<>();
     }
 
     @NonNull
@@ -38,7 +43,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
 
     @Override
     public void onBindViewHolder(CategoryViewHolder viewHolder, int position) {
-        viewHolder.updateWithCategory(this.categoriesList.get(position));
+        Category category = this.categoriesList.get(position);
+        viewHolder.updateWithCategory(category, expensesPerCategory.get(category.getId()));
     }
 
     @Override
@@ -46,8 +52,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
         return categoriesList.size();
     }
 
-    public void updateCategoriesData(List<Category> categoriesList) {
+    public void updateCategoriesData(List<Category> categoriesList, Map<Long, Float> expensesPerCategory) {
         this.categoriesList = categoriesList;
+        this.expensesPerCategory = expensesPerCategory;
         notifyDataSetChanged();
     }
 }

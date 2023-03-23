@@ -25,8 +25,9 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
         this.categoryDot = view.findViewById(R.id.category_card_category);
     }
 
-    public void updateWithCategory(Category category) {
+    public void updateWithCategory(Category category, Float totalExpenses) {
         this.nameTextView.setText(category.getName());
+        this.amountTextView.setText(String.format("%.2f €", totalExpenses));
         this.categoryDot.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(category.getColor())));
     }
 }
