@@ -1,5 +1,6 @@
 package com.patigny_baudet.devmoney.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -28,4 +29,10 @@ public class Category {
 
     // --- SETTER ---
     public void setId(long id) { this.id = id; }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

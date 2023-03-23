@@ -31,4 +31,8 @@ public class OperationDataRepository {
         return operationDao.getOperationsTotal();
     }
 
+    public void createOperation(Operation operation) {
+        operationDao.insertOperation(operation);
+    }
+
 }

@@ -2,6 +2,7 @@ package com.patigny_baudet.devmoney.models.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.patigny_baudet.devmoney.models.Operation;
@@ -22,5 +23,8 @@ public interface OperationDao {
 
     @Query("SELECT SUM(amount) FROM Operation")
     LiveData<Float> getOperationsTotal();
+
+    @Insert
+    long insertOperation(Operation operation);
 
 }

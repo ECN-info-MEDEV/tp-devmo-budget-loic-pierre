@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.patigny_baudet.devmoney.models.repositories.CategoryDataRepository;
 import com.patigny_baudet.devmoney.models.repositories.OperationDataRepository;
+import com.patigny_baudet.devmoney.views.viewModels.AddOperationViewModel;
 import com.patigny_baudet.devmoney.views.viewModels.MainViewModel;
 import com.patigny_baudet.devmoney.views.viewModels.OperationsViewModel;
 
@@ -26,6 +27,8 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
             return (T) new OperationsViewModel(operationDataSource, categoryDataSource);
         } else if (modelClass.isAssignableFrom(MainViewModel.class)) {
             return (T) new MainViewModel(operationDataSource, categoryDataSource);
+        } else if (modelClass.isAssignableFrom(AddOperationViewModel.class)) {
+            return (T) new AddOperationViewModel(operationDataSource, categoryDataSource);
         }
         throw new IllegalArgumentException("Unknown ViewModel class");
     }
