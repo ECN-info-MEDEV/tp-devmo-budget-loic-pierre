@@ -38,6 +38,7 @@ public class OperationsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_DEVMOney);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations);
         overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
