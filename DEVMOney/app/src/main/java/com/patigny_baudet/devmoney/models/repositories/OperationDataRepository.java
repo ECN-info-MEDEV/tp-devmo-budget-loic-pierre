@@ -35,4 +35,8 @@ public class OperationDataRepository {
         operationDao.insertOperation(operation);
     }
 
+    public void deleteOperation(long operation_id) {
+        operationDao.deleteOperation(operation_id);
+    }
+
 }

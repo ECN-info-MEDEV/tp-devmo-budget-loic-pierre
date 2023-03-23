@@ -27,4 +27,7 @@ public interface OperationDao {
     @Insert
     long insertOperation(Operation operation);
 
+    @Query("DELETE FROM Operation WHERE id = :operation_id")
+    void deleteOperation(long operation_id);
+
 }

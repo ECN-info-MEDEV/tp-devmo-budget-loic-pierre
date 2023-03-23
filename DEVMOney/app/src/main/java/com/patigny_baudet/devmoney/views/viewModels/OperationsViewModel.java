@@ -8,6 +8,8 @@ import com.patigny_baudet.devmoney.models.repositories.CategoryDataRepository;
 import com.patigny_baudet.devmoney.models.repositories.OperationDataRepository;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class OperationsViewModel extends ViewModel {
 
@@ -21,4 +23,9 @@ public class OperationsViewModel extends ViewModel {
     }
 
     public LiveData<List<Operation>> getOperationsList() { return operationDataRepository.getOperationsList(); }
+
+    public void deleteOperation(long operation_id) {
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(() -> operationDataRepository.deleteOperation(operation_id));
+    }
 }
