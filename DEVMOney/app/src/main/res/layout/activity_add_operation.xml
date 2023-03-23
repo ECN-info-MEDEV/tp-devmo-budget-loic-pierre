@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@id/activity_add_operation_explanation"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintVertical_bias="0"
-        android:fitsSystemWindows="true"/>
+        android:fitsSystemWindows="true"
+        android:elevation="@dimen/elevation1"/>
 
     <ImageButton
         android:id="@+id/activity_add_operation_return_button"
@@ -29,6 +30,7 @@
         android:padding="@dimen/padding2"
         android:layout_marginStart="@dimen/margin2"
         android:layout_marginBottom="@dimen/margin1"
+        android:translationZ="@dimen/elevation1"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +46,7 @@
         android:textColor="?attr/colorOnSurface"
         android:layout_marginBottom="@dimen/margin3"
         android:text="@string/activity_add_operation_title"
+        android:translationZ="@dimen/elevation1"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
