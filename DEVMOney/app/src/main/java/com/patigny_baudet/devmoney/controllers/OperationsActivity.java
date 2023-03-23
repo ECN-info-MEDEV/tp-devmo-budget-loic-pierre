@@ -40,6 +40,7 @@ public class OperationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operations);
+        overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
 
         // Initialize UI variables
         this.recyclerView = findViewById(R.id.activity_operations_recycler_view);
