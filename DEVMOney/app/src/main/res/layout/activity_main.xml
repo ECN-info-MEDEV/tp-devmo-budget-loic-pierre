@@ -137,6 +137,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.Body1"
         android:textColor="?attr/colorOnBackground"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@id/activity_main_mid_guideline"
         app:layout_constraintStart_toEndOf="@id/activity_main_total_balance_plus"
         app:layout_constraintTop_toTopOf="@+id/activity_main_total_balance_plus"
@@ -150,6 +151,7 @@
         android:text="@string/minus"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintStart_toEndOf="@id/activity_main_mid_guideline"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_total_balance_separator" />
 
@@ -159,6 +161,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.Body1"
         android:textColor="?attr/colorOnBackground"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/activity_main_total_balance_minus"
         app:layout_constraintTop_toTopOf="@+id/activity_main_total_balance_minus"
@@ -200,6 +203,7 @@
         android:layout_marginTop="@dimen/margin3"
         android:textAppearance="@style/TextAppearance.Body1"
         android:textColor="?attr/colorOnBackground"
+        android:gravity="center"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

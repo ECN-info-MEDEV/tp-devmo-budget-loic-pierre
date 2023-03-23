@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DEVMOney</string>
     <string name="activity_main_title">My Budget</string>
-    <string name="activity_main_expenses_title">Expenses of the month</string>
+    <string name="activity_main_expenses_title">Last Expenses</string>
     <string name="activity_main_operation_button">Operations List</string>
     <string name="activity_main_total_balance_title">Total Balance</string>
     <string name="plus">+</string>
