@@ -138,7 +138,7 @@
 
     <EditText
         android:id="@+id/activity_add_operation_amount_edittext"
-        android:inputType="textAutoCorrect|textAutoComplete|textCapSentences"
+        android:inputType="number"
         android:hint="@string/activity_add_operation_amount_hint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -201,5 +201,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity_add_operation_description_edittext"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/activity_add_operation_add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin4"
+        android:layout_marginEnd="@dimen/margin4"
+        android:layout_marginBottom="@dimen/margin5"
+        android:padding="@dimen/padding4"
+        android:backgroundTint="?attr/colorSurface"
+        android:text="@string/activity_add_operation_add_button"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_add_operation_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
