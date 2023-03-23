@@ -15,6 +15,9 @@ import com.patigny_baudet.devmoney.models.Operation;
 import com.patigny_baudet.devmoney.models.database.dao.CategoryDao;
 import com.patigny_baudet.devmoney.models.database.dao.OperationDao;
 
+/**
+ * Class representing the database.
+ */
 @Database(entities = {Category.class, Operation.class}, version = 1, exportSchema = false)
 public abstract class DEVMOneyDatabase extends RoomDatabase {
 
@@ -26,6 +29,11 @@ public abstract class DEVMOneyDatabase extends RoomDatabase {
     public abstract OperationDao operationDao();
 
     // Instance
+    /**
+     * Provides an instance of the database
+     * @param context the context of the application
+     * @return the instance of the database
+     */
     public static DEVMOneyDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (DEVMOneyDatabase.class) {
@@ -38,6 +46,11 @@ public abstract class DEVMOneyDatabase extends RoomDatabase {
     }
 
     // Prepopulate
+
+    /**
+     * Prepopulation callback to fill the database with initial data
+     * @return the Callback object
+     */
     private static Callback prepopulateDatabase() {
         return new Callback() {
 

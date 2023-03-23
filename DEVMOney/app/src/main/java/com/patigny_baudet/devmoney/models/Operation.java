@@ -5,6 +5,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+/**
+ * Operation entity.
+ */
 @Entity(foreignKeys = {@ForeignKey(entity=Category.class, parentColumns="id", childColumns="category_id")})
 public class Operation {
 

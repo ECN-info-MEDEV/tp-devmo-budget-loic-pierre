@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class for the Adapter of the categories
+ */
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
 
     // FOR DATA
@@ -27,11 +30,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
     private Map<Long, Float> expensesPerCategory;
 
     // CONSTRUCTOR
+
+    /**
+     * Constructor of the category adapter
+     */
     public CategoryAdapter() {
         this.categoriesList = new ArrayList<>();
         this.expensesPerCategory = new HashMap<>();
     }
 
+    /**
+     * Initializes the viewHolder for the category
+     * @param parent the parent of the viewHolder
+     * @param viewType unused
+     * @return the new viewHolder
+     */
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,17 +54,31 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryViewHolder>{
         return new CategoryViewHolder(view);
     }
 
+    /**
+     * Updates the category with its details
+     * @param viewHolder the viewHolder
+     * @param position the position in the list
+     */
     @Override
     public void onBindViewHolder(CategoryViewHolder viewHolder, int position) {
         Category category = this.categoriesList.get(position);
         viewHolder.updateWithCategory(category, expensesPerCategory.get(category.getId()));
     }
 
+    /**
+     * Gets the number of categories
+     * @return the number of categories
+     */
     @Override
     public int getItemCount() {
         return categoriesList.size();
     }
 
+    /**
+     * Update the category list when the database content changes
+     * @param categoriesList the list of categories
+     * @param expensesPerCategory the list of expenses per category
+     */
     public void updateCategoriesData(List<Category> categoriesList, Map<Long, Float> expensesPerCategory) {
         this.categoriesList = categoriesList;
         this.expensesPerCategory = expensesPerCategory;

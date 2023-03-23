@@ -25,24 +25,32 @@ import com.patigny_baudet.devmoney.views.viewModels.MainViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for the AddOperation Activity.
+ * This activity allows to create new operations and add those to the database
+ */
 public class AddOperationActivity extends AppCompatActivity {
 
     // UI COMPONENTS
-    private ImageButton returnButton;
     private EditText nameEditText;
     private EditText dateEditText;
     private EditText amountEditText;
     private EditText descriptionEditText;
+    private Spinner dropdown;
 
     // FOR DATA
     private AddOperationViewModel addOperationViewModel;
-    private Button addOperationButton;
-    private Spinner dropdown;
+
 
     // -----------------
     // LIFE CYCLE
     // -----------------
 
+    /**
+     * {@inheritDoc}
+     *
+     * Initializes the UI variables, setup the view model and the buttons
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_DEVMOney);
@@ -51,8 +59,8 @@ public class AddOperationActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out);
 
         // Initialize UI variables
-        this.returnButton = findViewById(R.id.activity_add_operation_return_button);
-        this.addOperationButton = findViewById(R.id.activity_add_operation_add_button);
+        ImageButton returnButton = findViewById(R.id.activity_add_operation_return_button);
+        Button addOperationButton = findViewById(R.id.activity_add_operation_add_button);
         this.nameEditText = findViewById(R.id.activity_add_operation_name_edittext);
         this.dateEditText = findViewById(R.id.activity_add_operation_date_edittext);
         this.amountEditText = findViewById(R.id.activity_add_operation_amount_edittext);
@@ -65,8 +73,8 @@ public class AddOperationActivity extends AppCompatActivity {
         this.getCategoriesList();
 
         // Setup buttons
-        this.returnButton.setOnClickListener(v -> finishActivity());
-        this.addOperationButton.setOnClickListener(v -> addOperation());
+        returnButton.setOnClickListener(v -> finishActivity());
+        addOperationButton.setOnClickListener(v -> addOperation());
     }
 
 
@@ -74,11 +82,17 @@ public class AddOperationActivity extends AppCompatActivity {
     // DATA
     // -----------------
 
+    /**
+     * Setup the view model of the activity
+     */
     private void setupViewModel() {
         ViewModelFactory viewModelFactory = Injection.provideViewModelFactory(this);
         this.addOperationViewModel = new ViewModelProvider(this, viewModelFactory).get(AddOperationViewModel.class);
     }
 
+    /**
+     * Recovers the list of categories from the database
+     */
     private void getCategoriesList() {
         this.addOperationViewModel.getCategoriesList().observe(this, this::updateSpinner);
     }
@@ -90,11 +104,17 @@ public class AddOperationActivity extends AppCompatActivity {
 
     // Finish
 
+    /**
+     * Finishes the activity
+     */
     @Override
     public void onBackPressed() {
         this.finishActivity();
     }
 
+    /**
+     * Finishes the activity with a slide transition
+     */
     public void finishActivity() {
         finish();
         overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
@@ -102,6 +122,9 @@ public class AddOperationActivity extends AppCompatActivity {
 
     // Add operation
 
+    /**
+     * Add the new operation to the database.
+     */
     private void addOperation() {
         float amount;
         try {
@@ -127,6 +150,10 @@ public class AddOperationActivity extends AppCompatActivity {
 
     // Setup spinner
 
+    /**
+     * Update the dropdown menu of the spinner with the list of categories.
+     * @param categoriesList the list of categories
+     */
     private void updateSpinner(List<Category> categoriesList) {
         ArrayAdapter<Category> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categoriesList);
         dropdown.setAdapter(adapter);

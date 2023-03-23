@@ -15,6 +15,9 @@ import com.patigny_baudet.devmoney.views.injection.Injection;
 import com.patigny_baudet.devmoney.views.injection.ViewModelFactory;
 import com.patigny_baudet.devmoney.views.viewModels.OperationsViewModel;
 
+/**
+ * Class of the Operation View Holder
+ */
 public class OperationViewHolder extends RecyclerView.ViewHolder {
 
     // FOR UI
@@ -26,6 +29,10 @@ public class OperationViewHolder extends RecyclerView.ViewHolder {
     // FOR DATA
     private OperationsViewModel operationsViewModel;
 
+    /**
+     * Constructor of the operation view holder. Initializes the UI variables.
+     * @param view the view corresponding to the view holder
+     */
     public OperationViewHolder(View view, Context context) {
         super(view);
         this.nameTextView = view.findViewById(R.id.operation_card_name);
@@ -36,6 +43,10 @@ public class OperationViewHolder extends RecyclerView.ViewHolder {
         this.operationsViewModel = new ViewModelProvider((ViewModelStoreOwner) context, viewModelFactory).get(OperationsViewModel.class);
     }
 
+    /**
+     * Update the view content with the operation details.
+     * @param operation the operation to show
+     */
     public void updateWithOperation(Operation operation) {
         this.nameTextView.setText(operation.getName());
         this.amountTextView.setText(String.format("%.2f €", operation.getAmount()));

@@ -19,6 +19,10 @@ import com.patigny_baudet.devmoney.views.viewModels.OperationsViewModel;
 
 import java.util.List;
 
+/**
+ * Class for the Operation Activity.
+ * This activity displays the list of operations
+ */
 public class OperationsActivity extends AppCompatActivity {
 
     // FOR DATA
@@ -28,14 +32,17 @@ public class OperationsActivity extends AppCompatActivity {
 
     // UI COMPONENTS
     private RecyclerView recyclerView;
-    private FloatingActionButton addButton;
-    private ImageButton returnButton;
 
 
     // -----------------
     // LIFE CYCLE
     // -----------------
 
+    /**
+     * {@inheritDoc}
+     *
+     * Initializes the UI variables, setup the view model and the buttons
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_DEVMOney);
@@ -45,8 +52,8 @@ public class OperationsActivity extends AppCompatActivity {
 
         // Initialize UI variables
         this.recyclerView = findViewById(R.id.activity_operations_recycler_view);
-        this.addButton = findViewById(R.id.activity_operations_add_button);
-        this.returnButton = findViewById(R.id.operation_card_delete);
+        FloatingActionButton addButton = findViewById(R.id.activity_operations_add_button);
+        ImageButton returnButton = findViewById(R.id.operation_card_delete);
 
         // Setup data
         this.setupRecyclerView();
@@ -58,6 +65,11 @@ public class OperationsActivity extends AppCompatActivity {
         returnButton.setOnClickListener(v -> finishActivity());
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * Recovers the operations list from the database
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -72,6 +84,9 @@ public class OperationsActivity extends AppCompatActivity {
 
     // Add operation
 
+    /**
+     * Go to the addOperation activity
+     */
     private void addOperation() {
         this.startActivity(new Intent(this, AddOperationActivity.class));
     }
@@ -79,11 +94,17 @@ public class OperationsActivity extends AppCompatActivity {
 
     // Finish
 
+    /**
+     * Finishes the activity.
+     */
     @Override
     public void onBackPressed() {
         this.finishActivity();
     }
 
+    /**
+     * Finishes the activity with a slide transition.
+     */
     public void finishActivity() {
         finish();
         overridePendingTransition(R.anim.slide_left_in, R.anim.slide_right_out);
@@ -94,11 +115,17 @@ public class OperationsActivity extends AppCompatActivity {
     // DATA
     // -----------------
 
+    /**
+     * Setup the view model of the activity
+     */
     private void setupViewModel() {
         ViewModelFactory viewModelFactory = Injection.provideViewModelFactory(this);
         this.operationsViewModel = new ViewModelProvider(this, viewModelFactory).get(OperationsViewModel.class);
     }
 
+    /**
+     * Recovers the list of operations from the database
+     */
     private void getOperationsList() {
         this.operationsViewModel.getOperationsList().observe(this, this::updateOperationsList);
         this.dataLoaded = true;
@@ -109,12 +136,19 @@ public class OperationsActivity extends AppCompatActivity {
     // UI
     //----------------------------
 
+    /**
+     * Set up the recycler view with the operation adapter
+     */
     private void setupRecyclerView() {
         this.operationAdapter = new OperationAdapter();
         this.recyclerView.setAdapter(this.operationAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /**
+     * Update the recycler view with the list of operations
+     * @param operationsList the list of operations
+     */
     private void updateOperationsList(List<Operation> operationsList) {
         this.operationAdapter.updateOperationsData(operationsList);
     }
